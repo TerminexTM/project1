@@ -1,0 +1,22 @@
+* {
+   border: 1px solid gold;
+}
+body {
+   display: flex;
+  background-color: rgb(26, 40, 13);
+  justify-content: center;
+  align-items: center;
+
+}
+.main {
+   display: flex;
+   flex-direction: column;
+   width: 80%;
+   justify-content: center;
+   align-items: center;
+}
+.carouselContainer {
+   display: flex;
+  width: 80%;
+  justify-content: center;
+}

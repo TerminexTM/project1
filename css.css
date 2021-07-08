@@ -25,8 +25,9 @@ body {
    margin: 0;
    color: blue;
 }
-.random:hover{
-   background-color: red;
+.random>h2:hover{
+   animation-name: rainbow;
+   background-color: rgb(0,0,0,.90);
 }
 .next>h2:hover{
    transition-duration: .2s;
@@ -168,4 +169,9 @@ input {
       font-size: 6rem;
    }
 
+}
+@keyframes rainbow{
+   from{
+
+   }
 }

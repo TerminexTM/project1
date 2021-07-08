@@ -4,32 +4,72 @@
     <meta charset="utf-8">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" charset="utf-8"></script>
     <script src="js.js" charset="utf-8"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css.css">
     <title></title>
   </head>
   <body>
+   <div class="container">
 
     <div class="main">
 
       <form>
-        <input type="text" placeholder='Info'/>
-        <input type="submit" value="Search Info"/>
+        <input type="text" placeholder='Character Name'/>
+        <input type="submit" value="Name Search"/>
       </form>
 
-      <div class="carouselContainer">
+      <div class="carouselMain">
 
-        <div class="carouselButton back">
-           <h1>BACK</h1>
+        <div class="carouselButton back glow-on-hover">
+           <h2>&#x21e6;</h2>
         </div>
         <div class="images">
         </div>
-        <div class="carouselButton next">
-           <h1>NEXT</h1>
+        <div class="carouselButton next glow-on-hover">
+           <h2>&#x21e8;</h2>
         </div>
 
       </div>
-
+      <div class="name">
+         <h3></h3>
+         <h3></h3>
+      </div>
+      <div class="carouselButton random glow-on-hover">
+         <h2>RANDOM</h2>
+      </div>
     </div>
+  </div>
+  <div class="informationContainer">
+
+  <div class="information">
+     <div class="gender">
+        <h3>GENDER:</h3>
+        <p>Male</p>
+     </div>
+     <div class="species">
+        <h3>SPECIES:</h3>
+        <p>Human</p>
+     </div>
+     <div class="location">
+        <h3>LOCATION:</h3>
+        <p>Citadel of Ricks</p>
+     </div>
+     <div class="status">
+        <h3>Status:</h3>
+        <p>Dead</p>
+     </div>
+     <div class="type">
+        <h3>TYPE:</h3>
+        <p>SuperHuman</p>
+     </div>
+     <div class="episodes">
+        <h3>EPISODES:</h3>
+        <p>List of Episodes</p>
+     </div>
+  </div>
+</div>
 
   </body>
 </html>

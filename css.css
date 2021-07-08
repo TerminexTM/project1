@@ -12,8 +12,21 @@ body{
   background-size: cover;
   background-position: center;
   height: 100%;
+  text-align: center;
   /* justify-content: center;
   align-items: center; */
+}
+body > h1 {
+   margin-top: 4%;
+   font-size: 5em;
+   margin-bottom: 0;
+   background-color: rgb(0,0,0,.2)
+}
+body > h2 {
+   margin-top: 0;
+   font-size: 4em;
+   margin-bottom: 0;
+   background-color: rgb(0,0,0,.2)
 }
 .submitInfo {
    margin-top: 5%;
@@ -21,13 +34,17 @@ body{
    margin-bottom: 2%;
 }
 input[type='text'] {
-   color: green;
-   background-color: rgb(0,0,0,.2);
-   font-weight: bolder;
+   color: white;
+   background-color: rgb(0,0,0,.5);
+   font-weight: 9000;
+   outline: none;
+}
+input[type='text']:active{
 }
 input::placeholder{
    color: green;
-   background-color: rgb(0,0,0,.4);
+   background-color: rgb(0,0,0,.7);
+   border-radius: 10px;
 }
 input{
    border: 2px solid green;
@@ -35,11 +52,12 @@ input{
 }
 input[type='submit']{
    font-weight: 900;
+   text-shadow: rgb(0,0,0) 1px 0 10px;
    color: white;
    background: radial-gradient(#69ad53,#c7fa6c,#314e1c,#c1f762,#7cbc6c,#365829,#84c15a,#69ad53,#c7fa6c,#314e1c,#c1f762,#7cbc6c,#365829,#84c15a,#69ad53,#c7fa6c,#314e1c,#c1f762,#7cbc6c,#365829,#84c15a,#69ad53,#c7fa6c,#314e1c,#c1f762,#7cbc6c,#365829,#84c15a,#69ad53,#c7fa6c);
    background-size: 1000% 1000%;
    border: 2px solid black;
-   opacity: .45;
+   opacity: .65;
    /* background-color: rgb(0,0,0,.40); */
    border-radius: 10px;
    animation: rainbow 60s infinite;
@@ -64,7 +82,7 @@ input[type='submit']:active{
    background: radial-gradient(#69ad53,#c7fa6c,#314e1c,#c1f762,#7cbc6c,#365829,#84c15a,#69ad53,#c7fa6c,#314e1c,#c1f762,#7cbc6c,#365829,#84c15a,#69ad53,#c7fa6c,#314e1c,#c1f762,#7cbc6c,#365829,#84c15a,#69ad53,#c7fa6c,#314e1c,#c1f762,#7cbc6c,#365829,#84c15a,#69ad53,#c7fa6c);
    background-size: 1000% 1000%;
    border: 2px solid black;
-   opacity: .45;
+   opacity: .65;
    /* background-color: rgb(0,0,0,.40); */
    border-radius: 10px;
    animation: rainbow 60s infinite;

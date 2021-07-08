@@ -239,11 +239,11 @@ input {
    }
    .next > h2 {
       margin: 0;
-      font-size: 4em;
+      font-size: 3em;
    }
    .back > h2 {
       margin: 0;
-      font-size: 4em;
+      font-size: 3em;
    }
 
 }

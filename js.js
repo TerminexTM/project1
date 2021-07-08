@@ -26,7 +26,7 @@ const infoRemover = () => {
    $('.gender').children().eq(1).empty()
    $('.name').children().empty()
 }
-
+//creates baseline site info opening with Rick Sanchez to load with site
   $.ajax({
     url: "https://rickandmortyapi.com/api/character/" +indexNum
 }).then(
@@ -38,13 +38,24 @@ const infoRemover = () => {
          $('.location').children().eq(1).append(data.location.name)
          $('.status').children().eq(1).append(data.status)
          $('.type').children().eq(1).append(data.type)
-         $('.episodes').children().eq(1).append(data.episode[0])
+         //$('.episodes').children().eq(1).append(data.episode[0])
          $('.gender').children().eq(1).append(data.gender)
          $('.name').children().eq(0).append('NAME: ' + data.name)
          $('.name').children().eq(1).append('ID: ' + data.id + "/671")
          if(data.type === ""){
             $('.type').children().eq(1).text('N/A')
+         const episode = data.episode[0]
+         console.log(episode);
          }
+         //ajax calls for the episode information!
+         $.ajax({
+            url: data.episode[0]
+         }).then(
+               (data) => {
+            console.log(data);
+            $('.episodes').children().eq(1).append(data.episode).append(` "${data.name}"`)
+         })
+         //clicking next on the screen will load the next page over!
         $('.next').on('click', ()=>{
            if(indexNum<indexMax){
              indexNum++
@@ -61,7 +72,7 @@ const infoRemover = () => {
                  $('.location').children().eq(1).append(data.location.name)
                  $('.status').children().eq(1).append(data.status)
                  $('.type').children().eq(1).append(data.type)
-                 $('.episodes').children().eq(1).append(data.episode[0])
+                // $('.episodes').children().eq(1).append(data.episode[0])
                  $('.gender').children().eq(1).append(data.gender)
                  $('.name').children().eq(0).append('NAME: ' + data.name)
                  $('.name').children().eq(1).append('ID: ' + data.id + "/671")
@@ -69,9 +80,16 @@ const infoRemover = () => {
                     $('.type').children().eq(1).text('N/A')
                  }
                  console.log(data);
-
+                 $.ajax({
+                    url: data.episode[0]
+                 }).then(
+                       (data) => {
+                    console.log(data);
+                    $('.episodes').children().eq(1).append(data.episode).append(` "${data.name}"`)
+                 })
              })
         })
+        //clicking back will load the previous page!
         $('.back').on('click', ()=>{
           if(indexNum>1){
             indexNum--
@@ -88,7 +106,7 @@ const infoRemover = () => {
                $('.location').children().eq(1).append(data.location.name)
                $('.status').children().eq(1).append(data.status)
                $('.type').children().eq(1).append(data.type)
-               $('.episodes').children().eq(1).append(data.episode[0])
+               //$('.episodes').children().eq(1).append(data.episode[0])
                $('.gender').children().eq(1).append(data.gender)
                $('.name').children().eq(0).append('NAME: ' + data.name)
                $('.name').children().eq(1).append('ID: ' + data.id + "/671")
@@ -96,12 +114,18 @@ const infoRemover = () => {
                   $('.type').children().eq(1).text('N/A')
                }
               console.log(data);
-
+              $.ajax({
+                 url: data.episode[0]
+              }).then(
+                    (data) => {
+                 console.log(data);
+                 $('.episodes').children().eq(1).append(data.episode).append(` "${data.name}"`)
+              })
             })
        })
         //iterate indexNum to go up and down to display new images for carousel
 
-      })
+   })
 //search engine goto function
   $('form').on('submit', (event)=>{
     event.preventDefault();
@@ -118,14 +142,20 @@ const infoRemover = () => {
               $('.location').children().eq(1).append(data.results[0].location.name)
               $('.status').children().eq(1).append(data.results[0].status)
               $('.type').children().eq(1).append(data.results[0].type)
-              $('.episodes').children().eq(1).append(data.results[0].episode[0])
+             // $('.episodes').children().eq(1).append(data.results[0].episode[0])
               $('.gender').children().eq(1).append(data.results[0].gender)
               $('.name').children().eq(0).append('NAME: ' + data.results[0].name)
               $('.name').children().eq(1).append('ID: ' + data.results[0].id + "/671")
               if(data.type === ""){
                  $('.type').children().eq(1).text('N/A')
               }
-
+              $.ajax({
+                 url: data.results[0].episode[0]
+              }).then(
+                    (data) => {
+                 console.log(data);
+                 $('.episodes').children().eq(1).append(data.episode).append(` "${data.name}"`)
+              })
              //when searching a character, change indexNum to be new id of character
             console.log(data.results[0]); //must include results[0] to grab 1 search
             indexNum = data.results[0].id
@@ -135,6 +165,7 @@ const infoRemover = () => {
 
 
   })
+  //random button to go to a random ID of the site.
   $('.random').on('click', ()=>{
      indexNum = Math.floor(Math.random()*671)
      $.ajax({
@@ -147,7 +178,7 @@ const infoRemover = () => {
            $('.location').children().eq(1).append(data.location.name)
            $('.status').children().eq(1).append(data.status)
            $('.type').children().eq(1).append(data.type)
-           $('.episodes').children().eq(1).append(data.episode[0])
+          // $('.episodes').children().eq(1).append(data.episode[0])
            $('.gender').children().eq(1).append(data.gender)
            $('.name').children().eq(0).append('NAME: ' + data.name)
            $('.name').children().eq(1).append('ID: ' + data.id + "/671")
@@ -155,7 +186,13 @@ const infoRemover = () => {
               $('.type').children().eq(1).text('N/A')
            }
          console.log(data);
-
+         $.ajax({
+            url: data.episode[0]
+         }).then(
+               (data) => {
+            console.log(data);
+            $('.episodes').children().eq(1).append(data.episode).append(` "${data.name}"`)
+         })
        })
 
  })

@@ -36,7 +36,7 @@ input::placeholder{
    color: white;
    padding-left: 2rem;
    padding-right: 2rem;
-   background: -gradient(45deg,red,orange,yellow,green,blue,violet);
+   background: linear-gradient(45deg,red,orange,yellow,green,blue,violet);
    background-size: 600% 600%;
    border: 2px solid black;
    /* background-color: rgb(0,0,0,.40); */

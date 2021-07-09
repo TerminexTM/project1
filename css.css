@@ -34,7 +34,7 @@ body{
 .nav {
    display: flex;
    position: fixed;
-   font-size: 4em;
+   font-size: 3em;
    flex-direction: column;
    height: 100%;
    justify-content: space-between;
@@ -45,7 +45,7 @@ body{
 }
 .navUp>h1{
    color: white;
-   background-color: lightgreen;
+   background-color: rgb(70 155 51);
    border-radius: 50%;
    opacity: .3;
 }
@@ -58,7 +58,7 @@ body{
 }
 .navDown>h1{
    color: white;
-   background-color: red;
+   background-color: darkred;
    border-radius: 50%;
    opacity: .3;
 }
@@ -67,7 +67,7 @@ body{
 }
 .navDown>h1:active{
    color: black;
-   background-color: darkred;
+   background-color: rgb(129, 50, 9);
 }
 body > h1 {
    margin-top: 4%;

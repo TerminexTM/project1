@@ -7,6 +7,14 @@ $(()=>{
   let indexMax = 671;
 
  //future code will live update when the website increases character count.
+ $('.navUp').children().on('click', ()=> {
+    $('html,body').scrollTop(150);
+    console.log('I see you clicked');
+})
+$('.navDown').children().on('click', ()=> {
+   $('html,body').scrollTop(100000);
+   console.log('I see you clicked');
+})
   $.ajax({
      url: 'https://rickandmortyapi.com/api/character/'
  }).then(

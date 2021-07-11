@@ -205,40 +205,40 @@ const infoRemover = () => {
 
  })
 
-$('document').on('swipeleft', ()=> {
-   console.log('that was a swipe left');
-   if(indexNum>1){
-     indexNum++
-  }else{
-     indexNum=indexMax
-  }
-   $.ajax({
-     url: "https://rickandmortyapi.com/api/character/" +indexNum
-  }).then(
-     (data) => {
-        infoRemover();
-        $('<img>').attr('src', data.image).appendTo('.images');
-        $('.species').children().eq(1).append(data.species)
-        $('.location').children().eq(1).append(data.location.name)
-        $('.status').children().eq(1).append(data.status)
-        $('.type').children().eq(1).append(data.type)
-        //$('.episodes').children().eq(1).append(data.episode[0])
-        $('.gender').children().eq(1).append(data.gender)
-        $('.name').children().eq(0).append('NAME: ' + data.name)
-        $('.name').children().eq(1).append('ID: ' + data.id + "/671")
-        if(data.type === ""){
-           $('.type').children().eq(1).text('N/A')
-        }
-       console.log(data);
-       $.ajax({
-          url: data.episode[0]
-       }).then(
-             (data) => {
-          console.log(data);
-          $('.episodes').children().eq(1).append(data.episode).append(` "${data.name}"`)
-       })
-     })
-})
+// $('document').on('swipeleft', ()=> {
+//    console.log('that was a swipe left');
+//    if(indexNum>1){
+//      indexNum++
+//   }else{
+//      indexNum=indexMax
+//   }
+//    $.ajax({
+//      url: "https://rickandmortyapi.com/api/character/" +indexNum
+//   }).then(
+//      (data) => {
+//         infoRemover();
+//         $('<img>').attr('src', data.image).appendTo('.images');
+//         $('.species').children().eq(1).append(data.species)
+//         $('.location').children().eq(1).append(data.location.name)
+//         $('.status').children().eq(1).append(data.status)
+//         $('.type').children().eq(1).append(data.type)
+//         //$('.episodes').children().eq(1).append(data.episode[0])
+//         $('.gender').children().eq(1).append(data.gender)
+//         $('.name').children().eq(0).append('NAME: ' + data.name)
+//         $('.name').children().eq(1).append('ID: ' + data.id + "/671")
+//         if(data.type === ""){
+//            $('.type').children().eq(1).text('N/A')
+//         }
+//        console.log(data);
+//        $.ajax({
+//           url: data.episode[0]
+//        }).then(
+//              (data) => {
+//           console.log(data);
+//           $('.episodes').children().eq(1).append(data.episode).append(` "${data.name}"`)
+//        })
+//      })
+// }) //needs JQuery mobile functionality?
 
 
 
